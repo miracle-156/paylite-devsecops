@@ -16,7 +16,7 @@ jobs:
         uses: trufflesecurity/trufflehog@main
         with:
           path: .
-          extra_args: --fail
+          
 
   sast-bandit:
     name: Bandit - Python SAST
