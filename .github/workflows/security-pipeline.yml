@@ -11,13 +11,12 @@ jobs:
     name: TruffleHog - Secret Detection
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Run TruffleHog
+      - uses: actions/checkout@v4          
+      - name: Run TruffleHog (filesystem scan)
         uses: trufflesecurity/trufflehog@main
         with:
-          extra_args: --only-verified=false --fail
+          path: .
+          extra_args: --fail
 
   sast-bandit:
     name: Bandit - Python SAST
